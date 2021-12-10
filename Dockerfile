@@ -6,6 +6,5 @@ RUN npm install
 FROM node:16.6-alpine
 WORKDIR /app
 COPY --from=builder /src/node_modules/ /app/node_modules/
-COPY ./container_info.json .
 COPY ./inform-periodic.js .
 CMD ["node", "inform-periodic.js"]
